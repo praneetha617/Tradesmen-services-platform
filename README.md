@@ -1,1 +1,0 @@
-# Tradesmen-services-platform
