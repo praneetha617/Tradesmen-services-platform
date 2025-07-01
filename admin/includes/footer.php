@@ -1,4 +1,4 @@
 <footer class="main-footer">
-    Tradescmen Service.
+    Tradesmen Service.
     
   </footer>
