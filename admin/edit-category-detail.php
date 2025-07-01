@@ -80,9 +80,10 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
                    
                   <div class="form-group">
                     <?php
-                   $eid=$_GET['editid'];
-$sql="SELECT * from tblcategory where ID=$eid";
+                   $eid = intval($_GET['editid']);
+$sql="SELECT * from tblcategory where ID=:eid";
 $query = $dbh -> prepare($sql);
+$query->bindParam(':eid',$eid,PDO::PARAM_INT);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 
