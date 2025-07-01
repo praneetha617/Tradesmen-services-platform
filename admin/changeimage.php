@@ -89,9 +89,10 @@ $query->bindParam(':eid',$eid,PDO::PARAM_STR);
               <!-- form start -->
               <form role="form" method="post" enctype="multipart/form-data">
                 <?php
-                   $eid=$_GET['editid'];
-$sql="SELECT * from tblperson where ID=$eid";
+                   $eid = intval($_GET['editid']);
+$sql="SELECT * from tblperson where ID=:eid";
 $query = $dbh -> prepare($sql);
+$query->bindParam(':eid',$eid,PDO::PARAM_INT);
 $query->execute();
 $results=$query->fetchAll(PDO::FETCH_OBJ);
 
